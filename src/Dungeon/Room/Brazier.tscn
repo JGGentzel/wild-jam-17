@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/Fireball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dungeon/Room/Brazier.obj" type="ArrayMesh" id=3]
+
+[node name="Brazier" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="Fireball" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0753212, 2.90515, -0.212333 )
+is_static = true

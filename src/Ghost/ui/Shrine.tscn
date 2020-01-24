@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Dungeon/Shrine.gd" type="Script" id=1]
+[ext_resource path="res://Ghost/ui/skulls_bg.jpg" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/Viktors Littl Creepy Horror.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[node name="Shrine" type="TextureRect"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -982.0
+margin_top = 60.0
+margin_right = -42.0
+margin_bottom = 1039.0
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 36.0
+margin_top = 63.0
+margin_right = -44.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyHealth" type="Button" parent="VBoxContainer"]
+margin_right = 860.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 2 )
+text = "Buy Health"
+
+[node name="BuyMana" type="Button" parent="VBoxContainer"]
+margin_top = 74.0
+margin_right = 860.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 2 )
+text = "Buy Mana"
+
+[node name="BuyMorality" type="Button" parent="VBoxContainer"]
+margin_top = 148.0
+margin_right = 860.0
+margin_bottom = 202.0
+custom_fonts/font = SubResource( 2 )
+text = "Buy Morality"
+
+[node name="Okay" type="Button" parent="VBoxContainer"]
+margin_top = 222.0
+margin_right = 860.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 2 )
+text = "Okay"
+[connection signal="button_down" from="VBoxContainer/BuyHealth" to="." method="_on_BuyHealth_button_down"]
+[connection signal="button_down" from="VBoxContainer/BuyMana" to="." method="_on_BuyMana_button_down"]
+[connection signal="button_down" from="VBoxContainer/BuyMorality" to="." method="_on_BuyMorality_button_down"]
+[connection signal="button_down" from="VBoxContainer/Okay" to="." method="_on_Okay_button_down"]

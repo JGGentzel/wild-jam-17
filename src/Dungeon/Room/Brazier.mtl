@@ -1,0 +1,12 @@
+# Blender MTL File: 'Brazier.blend'
+# Material Count: 1
+
+newmtl Pedestal
+Ns 74.586758
+Ka 1.000000 1.000000 1.000000
+Kd 0.058011 0.058011 0.058011
+Ks 0.193939 0.193939 0.193939
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3

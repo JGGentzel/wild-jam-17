@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Ghost/ui/skulls.png" type="Texture" id=1]
+[ext_resource path="res://Ghost/ui/skulls_bg.jpg" type="Texture" id=2]
+[ext_resource path="res://Ghost/ui/PlayerHealthBar.gd" type="Script" id=3]
+[ext_resource path="res://Ghost/ui/mana.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/Viktors Littl Creepy Horror.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+extra_spacing_char = 12
+font_data = SubResource( 1 )
+
+[node name="PlayerHealthBar" type="TextureProgress"]
+margin_left = 5.0
+margin_right = 645.0
+margin_bottom = 64.0
+value = 100.0
+texture_progress = ExtResource( 1 )
+tint_progress = Color( 1, 1, 1, 0.501961 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerManaBar" type="TextureProgress" parent="."]
+margin_left = 5.0
+margin_top = 70.0
+margin_right = 641.319
+margin_bottom = 135.442
+value = 100.0
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 1, 1, 1, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PlayerCoins" type="Control" parent="."]
+margin_left = 8.86011
+margin_top = 222.94
+margin_right = 48.8601
+margin_bottom = 262.94
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="PlayerCoins"]
+modulate = Color( 1, 1, 1, 0.501961 )
+margin_right = 640.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerCoins"]
+margin_left = 13.5186
+margin_top = 7.51031
+margin_right = 211.519
+margin_bottom = 55.5103
+custom_fonts/font = SubResource( 2 )
+text = "Coins: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerMoralityBar" type="TextureProgress" parent="."]
+margin_left = 5.0
+margin_top = 146.0
+margin_right = 645.0
+margin_bottom = 210.0
+value = 100.0
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 1, 1, 1, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Morality" type="Label" parent="PlayerMoralityBar"]
+margin_left = 3.86011
+margin_top = 6.34312
+margin_right = 201.86
+margin_bottom = 54.3431
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

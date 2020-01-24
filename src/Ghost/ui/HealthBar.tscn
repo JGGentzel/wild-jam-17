@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Ghost/ui/bar_1.png" type="Texture" id=1]
+[ext_resource path="res://Ghost/ui/HealthBar3D.gd" type="Script" id=2]
+[ext_resource path="res://Ghost/ui/HealthBar2D.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+
+[node name="HealthBar" type="Sprite3D"]
+material_override = SubResource( 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 160, 16 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="HealthBar2D" type="TextureProgress" parent="Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+step = 5.0
+value = 50.0
+texture_progress = ExtResource( 1 )
+script = ExtResource( 3 )

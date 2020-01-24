@@ -1,0 +1,379 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Dungeon/Camera.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+ambient_light_color = Color( 0.505882, 0.317647, 0.317647, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "MoveEast"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 16.288 ), Vector3( 30, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 0 ), Color( 0.109804, 0.109804, 0.109804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "MoveEast2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -30, 20.832, 16.288 ), Vector3( 0, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 1 ), Color( 0.109804, 0.109804, 0.109804, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "MoveNorth"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 16.288 ), Vector3( 0, 20.832, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 0 ), Color( 0.109804, 0.109804, 0.109804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "MoveNorth2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 52 ), Vector3( 0, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 1 ), Color( 0.109804, 0.109804, 0.109804, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "MoveSouth"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 16.288 ), Vector3( 0, 20.832, 52 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 0 ), Color( 0.109804, 0.109804, 0.109804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "MoveSouth2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, -10 ), Vector3( 0, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 1 ), Color( 0.109804, 0.109804, 0.109804, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 20.832, 16.288 ), Vector3( -30, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 0 ), Color( 0.109804, 0.109804, 0.109804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 30, 20.832, 16.288 ), Vector3( 0, 20.832, 16.288 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.109804, 0.109804, 0.109804, 1 ), Color( 0.109804, 0.109804, 0.109804, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "MoveEast"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "MoveEast2"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "MoveNorth"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "MoveNorth2"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "MoveSouth"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "MoveSouth2"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "MoveWest"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "MoveWest2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=32]
+states/Idle/node = SubResource( 11 )
+states/Idle/position = Vector2( 349, 58 )
+states/MoveEast/node = SubResource( 12 )
+states/MoveEast/position = Vector2( 134.5, 66 )
+states/MoveEast2/node = SubResource( 13 )
+states/MoveEast2/position = Vector2( 136.25, 154 )
+states/MoveNorth/node = SubResource( 14 )
+states/MoveNorth/position = Vector2( 341.5, -54.5 )
+states/MoveNorth2/node = SubResource( 15 )
+states/MoveNorth2/position = Vector2( 538, -54 )
+states/MoveSouth/node = SubResource( 16 )
+states/MoveSouth/position = Vector2( 310, 241.5 )
+states/MoveSouth2/node = SubResource( 17 )
+states/MoveSouth2/position = Vector2( 513.5, 243.5 )
+states/MoveWest/node = SubResource( 18 )
+states/MoveWest/position = Vector2( 537, 58.875 )
+states/MoveWest2/node = SubResource( 19 )
+states/MoveWest2/position = Vector2( 537, 141.5 )
+transitions = [ "Idle", "MoveWest", SubResource( 20 ), "MoveWest", "MoveWest2", SubResource( 21 ), "MoveWest2", "Idle", SubResource( 22 ), "Idle", "MoveEast", SubResource( 23 ), "MoveEast", "MoveEast2", SubResource( 24 ), "MoveEast2", "Idle", SubResource( 25 ), "Idle", "MoveSouth", SubResource( 26 ), "MoveSouth", "MoveSouth2", SubResource( 27 ), "MoveSouth2", "Idle", SubResource( 28 ), "Idle", "MoveNorth", SubResource( 29 ), "MoveNorth", "MoveNorth2", SubResource( 30 ), "MoveNorth2", "Idle", SubResource( 31 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -361, -146 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=33]
+
+[node name="Camera" type="Camera"]
+transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0, 20.832, 16.288 )
+environment = SubResource( 1 )
+fov = 50.0
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 2 )
+anims/MoveEast = SubResource( 3 )
+anims/MoveEast2 = SubResource( 4 )
+anims/MoveNorth = SubResource( 5 )
+anims/MoveNorth2 = SubResource( 6 )
+anims/MoveSouth = SubResource( 7 )
+anims/MoveSouth2 = SubResource( 8 )
+anims/MoveWest = SubResource( 9 )
+anims/MoveWest2 = SubResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.109804, 0.109804, 0.109804, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 32 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 33 )

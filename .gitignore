@@ -1,0 +1,4 @@
+builds/
+*.blend1
+*.blend2
+src/.import/*

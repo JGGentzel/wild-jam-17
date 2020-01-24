@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Dungeon/Room/room.glb" type="PackedScene" id=1]
+[ext_resource path="res://Dungeon/Room/Brazier.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Dungeon/Room/Door/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dungeon/Room/room.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Dungeon/Room/Tiles.material" type="Material" id=5]
+[ext_resource path="res://Dungeon/Room/pedestal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Dungeon/Room/room.gd" type="Script" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 9.08677, 1, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1, 4.77991 )
+
+[node name="room" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+
+[node name="Room" parent="." index="0"]
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="Walls" type="StaticBody" parent="." index="1"]
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape_se" type="CollisionShape" parent="Walls" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1221, 0.994629, 10.9545 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape_ne" type="CollisionShape" parent="Walls" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0611, 0.994629, -11.0658 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape_sw" type="CollisionShape" parent="Walls" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0856, 0.994629, 10.9138 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape_nw" type="CollisionShape" parent="Walls" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2815, 0.994629, -11.1268 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape_sw2" type="CollisionShape" parent="Walls" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0461, 0.987083, 6.75085 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape_se2" type="CollisionShape" parent="Walls" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9895, 0.987083, 6.83224 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape_ne2" type="CollisionShape" parent="Walls" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.924, 0.987083, -6.80543 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape_se3" type="CollisionShape" parent="Walls" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0708, 0.987083, -6.88682 )
+shape = SubResource( 2 )
+
+[node name="Spawners" type="Spatial" parent="." index="2"]
+
+[node name="Spawn1" type="Position3D" parent="Spawners" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6598, 0, -6.11303 )
+
+[node name="Spawn2" type="Position3D" parent="Spawners" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2529, 0, 6.05735 )
+
+[node name="Spawn4" type="Position3D" parent="Spawners" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0266447, 0, -6.21477 )
+
+[node name="Spawn3" type="Position3D" parent="Spawners" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0547438, 0, 6.40325 )
+
+[node name="Spawn6" type="Position3D" parent="Spawners" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.831, 0, -4.8922 )
+
+[node name="Spawn5" type="Position3D" parent="Spawners" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2409, 0, 6.36256 )
+
+[node name="pedestal" parent="." index="3" instance=ExtResource( 6 )]
+
+[node name="Braziers" type="Spatial" parent="." index="4"]
+
+[node name="Brazier" parent="Braziers" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1412, 0, 8.151 )
+
+[node name="Brazier2" parent="Braziers" index="1" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2668, 0, 8.151 )
+
+[node name="Brazier4" parent="Braziers" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1412, 0, -8.0863 )
+
+[node name="Brazier3" parent="Braziers" index="3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2668, 0, -8.0863 )
+
+[node name="Doors" type="Spatial" parent="." index="5"]
+
+[node name="NorthDoor" parent="Doors" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
+
+[node name="EnterNorth" type="Position3D" parent="Doors" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.98596 )
+
+[node name="EnterStart" type="Position3D" parent="Doors" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9646 )
+
+[node name="SouthDoor" parent="Doors" index="3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.1613 )
+direction = 1
+
+[node name="EnterSouth" type="Position3D" parent="Doors" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.02496 )
+
+[node name="WestDoor" parent="Doors" index="5" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.205, 0, 0 )
+direction = 3
+
+[node name="EnterWest" type="Position3D" parent="Doors" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.986, 0, 0 )
+
+[node name="EastDoor" parent="Doors" index="7" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.179, 0, 0 )
+direction = 2
+
+[node name="EnterEast" type="Position3D" parent="Doors" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.025, 0, 0 )
+
+[node name="Coins" type="Spatial" parent="." index="6"]
+
+[node name="Enemies" type="Spatial" parent="." index="7"]
